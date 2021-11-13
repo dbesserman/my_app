@@ -37,6 +37,9 @@ defmodule MyApp.Accounts do
   """
   def get_user!(id), do: Repo.get!(User, id)
 
+  def get_user_from_genserver(user_id), do: MyApp.UserServer.get_user(user_id)
+
+
   @doc """
   Creates a user.
 

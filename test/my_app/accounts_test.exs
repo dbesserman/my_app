@@ -1,5 +1,9 @@
 defmodule MyApp.AccountsTest do
-  use MyApp.DataCase
+  use ExUnit.Case
+
+  setup do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MyApp.Repo)
+  end
 
   alias MyApp.Accounts
 
